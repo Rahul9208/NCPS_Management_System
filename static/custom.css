@@ -1,0 +1,422 @@
+/* Additional custom styles */
+
+/* ===================================== */
+/* FLUID SIZING SYSTEM FOR ALL SCREENS */
+/* ===================================== */
+
+/* Root sizing - scales with viewport width */
+:root {
+    /* Fluid font sizes using clamp(min, preferred, max) */
+    --font-size-base: clamp(13px, 1vw, 18px);
+    --font-size-h1: clamp(1.5rem, 5vw, 3.5rem);
+    --font-size-h2: clamp(1.3rem, 4vw, 2.8rem);
+    --font-size-h3: clamp(1.1rem, 3vw, 2.2rem);
+    --font-size-h4: clamp(1rem, 2.5vw, 1.8rem);
+    --font-size-h5: clamp(0.95rem, 2vw, 1.5rem);
+    
+    /* Fluid spacing */
+    --spacing-xs: clamp(8px, 1vw, 16px);
+    --spacing-sm: clamp(12px, 1.5vw, 20px);
+    --spacing-md: clamp(16px, 2vw, 32px);
+    --spacing-lg: clamp(24px, 3vw, 48px);
+    --spacing-xl: clamp(32px, 4vw, 64px);
+    
+    /* Fluid padding */
+    --padding-container: clamp(12px, 2vw, 40px);
+    --padding-section: clamp(30px, 6vw, 100px);
+    
+    /* Fluid border radius */
+    --radius-sm: clamp(6px, 1vw, 12px);
+    --radius-md: clamp(8px, 1.5vw, 16px);
+    --radius-lg: clamp(12px, 2vw, 24px);
+}
+
+/* ===================================== */
+/* ULTRA WIDE MONITOR OPTIMIZATION (2560px+) */
+/* ===================================== */
+@media (min-width: 2560px) {
+    body { font-size: 18px; }
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.8rem; }
+    h3 { font-size: 2.2rem; }
+    .container { max-width: 2200px; margin: 0 auto; }
+    .btn { font-size: 1.1rem; padding: 16px 40px; }
+}
+
+/* ===================================== */
+/* LARGE DESKTOP (1920px-2560px) */
+/* ===================================== */
+@media (min-width: 1920px) and (max-width: 2560px) {
+    body { font-size: 17px; }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.4rem; }
+    h3 { font-size: 1.9rem; }
+    .container { max-width: 1800px; }
+}
+
+/* ===================================== */
+/* STANDARD DESKTOP (1440px-1920px) */
+/* ===================================== */
+@media (min-width: 1440px) and (max-width: 1920px) {
+    body { font-size: 16px; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.8rem; }
+    .container { max-width: 1320px; }
+}
+
+/* ===================================== */
+/* MEDIUM DESKTOP (1200px-1440px) */
+/* ===================================== */
+@media (min-width: 1200px) and (max-width: 1440px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.6rem; }
+    .container { max-width: 1140px; }
+}
+
+/* ===================================== */
+/* LAPTOP/SMALL DESKTOP (992px-1200px) */
+/* ===================================== */
+@media (min-width: 992px) and (max-width: 1200px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.4rem; }
+    .container { max-width: 960px; }
+}
+
+/* ===================================== */
+/* TABLET LANDSCAPE (768px-992px) */
+/* ===================================== */
+@media (min-width: 768px) and (max-width: 992px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.3rem; }
+    .container { max-width: 720px; }
+    .btn { font-size: 0.9rem; padding: 10px 20px; }
+}
+
+/* ===================================== */
+/* TABLET PORTRAIT (576px-768px) */
+/* ===================================== */
+@media (min-width: 576px) and (max-width: 768px) {
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+    h3 { font-size: 1.1rem; }
+    .container { max-width: 540px; }
+    .btn { width: 100%; font-size: 0.85rem; padding: 10px 16px; }
+}
+
+/* ===================================== */
+/* MOBILE (360px-576px) */
+/* ===================================== */
+@media (max-width: 576px) {
+    h1 { font-size: 1.3rem; }
+    h2 { font-size: 1.1rem; }
+    h3 { font-size: 1rem; }
+    .container { padding: 0 var(--spacing-xs); }
+    .btn { width: 100%; font-size: 0.85rem; padding: 10px 16px; margin-bottom: 8px; }
+}
+
+
+.polar-gradient {
+    background: linear-gradient(135deg, #0d47a1 0%, #1565c0 25%, #0277bd 50%, #0288d1 75%, #039be5 100%);
+}
+
+.ice-texture {
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 0%, transparent 20%);
+}
+
+.wave-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%230d47a1' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Animation for cards */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.floating-card {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* ===================================== */
+/* MOBILE-FIRST RESPONSIVE UTILITIES */
+/* ===================================== */
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    h4 {
+        font-size: 1.1rem !important;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .stats-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 13px;
+    }
+    
+    h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.2rem !important;
+    }
+    
+    h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .hero-title {
+        font-size: 2rem !important;
+    }
+}
+
+/* Responsive Spacing */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .row {
+        --bs-gutter-x: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    .row {
+        --bs-gutter-x: 0.5rem;
+    }
+    
+    section {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+}
+
+/* Responsive Buttons */
+@media (max-width: 576px) {
+    .btn {
+        width: 100%;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        padding: 10px 16px;
+        border-radius: 8px;
+    }
+    
+    .btn-group-vertical {
+        width: 100%;
+    }
+}
+
+/* Responsive Cards */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.08) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        border-radius: 10px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+}
+
+/* Responsive Images */
+@media (max-width: 768px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .img-responsive {
+        width: 100%;
+    }
+}
+
+/* Responsive Flex */
+@media (max-width: 768px) {
+    .d-flex {
+        flex-wrap: wrap;
+    }
+    
+    .d-md-flex {
+        display: flex !important;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .d-flex.gap-2,
+    .d-flex.gap-3,
+    .d-flex.gap-4,
+    .d-flex.gap-5 {
+        flex-direction: column;
+        gap: 10px !important;
+    }
+}
+
+/* Responsive Tables */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9rem;
+    }
+    
+    .table-responsive {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .table {
+        font-size: 0.85rem;
+    }
+    
+    th, td {
+        padding: 8px 6px;
+    }
+}
+
+/* Responsive Lists */
+@media (max-width: 576px) {
+    ul, ol {
+        padding-left: 20px;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+}
+
+/* Responsive Forms */
+@media (max-width: 768px) {
+    .form-group,
+    .mb-3,
+    .mb-4 {
+        margin-bottom: 15px;
+    }
+    
+    .form-control,
+    .form-select,
+    .form-range {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+@media (max-width: 576px) {
+    .form-control,
+    .form-select {
+        padding: 12px 10px;
+        font-size: 16px;
+    }
+    
+    label {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+}
+
+/* Responsive Modals */
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 10px;
+    }
+    
+    .modal-content {
+        border-radius: 12px;
+    }
+    
+    .modal-header {
+        padding: 15px;
+    }
+    
+    .modal-body {
+        padding: 15px;
+    }
+}
+
+/* Responsive Navbar */
+@media (max-width: 576px) {
+    .navbar-expand-lg .navbar-collapse {
+        margin-top: 10px;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .nav-link {
+        padding: 8px 12px !important;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive Footers */
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-section {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    footer {
+        padding: 30px 0 15px;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-links {
+        text-align: center;
+    }
+}
